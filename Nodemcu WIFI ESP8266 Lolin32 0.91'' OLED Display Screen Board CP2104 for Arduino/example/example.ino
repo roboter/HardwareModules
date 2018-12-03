@@ -4,7 +4,7 @@
 //SDA -- D4
 //SCL -- D5
 //RST -- D2
-OLED display(D4, D5);
+OLED display(2, 14);
 void setup() {
 pinMode(D2, OUTPUT);
 digitalWrite(D2, LOW); // turn D2 low to reset OLED
