@@ -29,7 +29,7 @@ as well as Adafruit raw 1.8" TFT display
 // For the breakout, you can use any 2 or 3 pins
 // These pins will also work for the 1.8" TFT shield
 #define TFT_CS     PA2
-#define TFT_RST    PA4  // you can also connect this to the Arduino reset
+#define TFT_RST    0  // you can also connect this to the Arduino reset
                       // in which case, set this #define pin to 0!
 #define TFT_DC     PA3
 
