@@ -4,6 +4,12 @@
 
 #define DELAY 0x80
 
+#define D 2
+
+#ifndef _swap_int16_t
+#define _swap_int16_t(a, b) { int16_t t = a; a = b; b = t; }
+#endif
+
 // based on Adafruit ST7735 library for Arduino
 static const uint8_t
   init_cmds1[] = {            // Init for 7735R, part 1 (red or green tab)
@@ -99,12 +105,12 @@ static void ST7735_Reset() {
 
 static void ST7735_WriteCommand(uint8_t cmd) {
     HAL_GPIO_WritePin(ST7735_DC_GPIO_Port, ST7735_DC_Pin, GPIO_PIN_RESET);
-    HAL_SPI_Transmit(&ST7735_SPI_PORT, &cmd, sizeof(cmd), HAL_MAX_DELAY);
+    HAL_SPI_Transmit(&ST7735_SPI_PORT, &cmd, sizeof(cmd), D);
 }
 
 static void ST7735_WriteData(uint8_t* buff, size_t buff_size) {
     HAL_GPIO_WritePin(ST7735_DC_GPIO_Port, ST7735_DC_Pin, GPIO_PIN_SET);
-    HAL_SPI_Transmit(&ST7735_SPI_PORT, buff, buff_size, HAL_MAX_DELAY);
+    HAL_SPI_Transmit(&ST7735_SPI_PORT, buff, buff_size, D);
 }
 
 static void ST7735_ExecuteCommandList(const uint8_t *addr) {
@@ -246,7 +252,7 @@ void ST7735_FillRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h, uint16
     HAL_GPIO_WritePin(ST7735_DC_GPIO_Port, ST7735_DC_Pin, GPIO_PIN_SET);
     for(y = h; y > 0; y--) {
         for(x = w; x > 0; x--) {
-            HAL_SPI_Transmit(&ST7735_SPI_PORT, data, sizeof(data), HAL_MAX_DELAY);
+            HAL_SPI_Transmit(&ST7735_SPI_PORT, data, sizeof(data), 2);
         }
     }
 
@@ -274,4 +280,43 @@ void ST7735_InvertColors(bool invert) {
     ST7735_Unselect();
 }
 
+void ST7735_DrawLine(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
+        uint16_t color) {
+    int16_t steep = abs(y1 - y0) > abs(x1 - x0);
+    if (steep) {
+        _swap_int16_t(x0, y0);
+        _swap_int16_t(x1, y1);
+    }
+
+    if (x0 > x1) {
+        _swap_int16_t(x0, x1);
+        _swap_int16_t(y0, y1);
+    }
+
+    int16_t dx, dy;
+    dx = x1 - x0;
+    dy = abs(y1 - y0);
+
+    int16_t err = dx / 2;
+    int16_t ystep;
+
+    if (y0 < y1) {
+        ystep = 1;
+    } else {
+        ystep = -1;
+    }
+
+    for (; x0<=x1; x0++) {
+        if (steep) {
+        	ST7735_DrawPixel(y0, x0, color);
+        } else {
+        	ST7735_DrawPixel(x0, y0, color);
+        }
+        err -= dy;
+        if (err < 0) {
+            y0 += ystep;
+            err += dx;
+        }
+    }
+}
 

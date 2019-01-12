@@ -29,7 +29,7 @@ as well as Adafruit raw 1.8" TFT display
 // For the breakout, you can use any 2 or 3 pins
 // These pins will also work for the 1.8" TFT shield
 #define TFT_CS     PA2
-#define TFT_RST    0  // you can also connect this to the Arduino reset
+#define TFT_RST    PA4  // you can also connect this to the Arduino reset
                       // in which case, set this #define pin to 0!
 #define TFT_DC     PA3
 
@@ -54,18 +54,12 @@ void setup(void) {
   // Use this initializer if you're using a 1.8" TFT
   tft.initR(INITR_BLACKTAB);   // initialize a ST7735S chip, black tab
 
-  // Use this initializer (uncomment) if you're using a 1.44" TFT
-  //tft.initR(INITR_144GREENTAB);   // initialize a ST7735S chip, black tab
-
   Serial.println("Initialized");
   printf("test");
+}
 
+void loop() {
   uint16_t time = millis();
-  tft.fillScreen(ST7735_BLACK);
-  time = millis() - time;
-
-  Serial.println(time, DEC);
-  delay(500);
 
   // large block of text
   tft.fillScreen(ST7735_BLACK);
@@ -107,16 +101,14 @@ void setup(void) {
 
   mediabuttons();
   delay(500);
-
+ tft.fillScreen(ST7735_BLACK);
+  delay(500);
+  
   Serial.println("done");
-  delay(1000);
-}
-
-void loop() {
-  tft.invertDisplay(true);
-  delay(500);
-  tft.invertDisplay(false);
-  delay(500);
+  time = millis() - time;
+  tft.print(time);
+  Serial.println(time, DEC);
+  delay(9000);
 }
 
 void testlines(uint16_t color) {

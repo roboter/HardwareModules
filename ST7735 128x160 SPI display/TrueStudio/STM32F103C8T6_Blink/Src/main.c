@@ -80,7 +80,39 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void testlines(uint16_t color) {
+	ST7735_FillScreen(ST7735_BLACK);
+  for (int16_t x=0; x < ST7735_WIDTH; x+=6) {
+	  ST7735_DrawLine(0, 0, x, ST7735_HEIGHT-1, color);
+  }
+  for (int16_t y=0; y < ST7735_HEIGHT; y+=6) {
+	  ST7735_DrawLine(0, 0, ST7735_WIDTH-1, y, color);
+  }
 
+  ST7735_FillScreen(ST7735_BLACK);
+  for (int16_t x=0; x < ST7735_WIDTH; x+=6) {
+	  ST7735_DrawLine(ST7735_WIDTH-1, 0, x, ST7735_HEIGHT-1, color);
+  }
+  for (int16_t y=0; y < ST7735_HEIGHT; y+=6) {
+	  ST7735_DrawLine(ST7735_WIDTH-1, 0, 0, y, color);
+  }
+
+  ST7735_FillScreen(ST7735_BLACK);
+  for (int16_t x=0; x < ST7735_WIDTH; x+=6) {
+	  ST7735_DrawLine(0, ST7735_HEIGHT-1, x, 0, color);
+  }
+  for (int16_t y=0; y < ST7735_HEIGHT; y+=6) {
+	  ST7735_DrawLine(0, ST7735_HEIGHT-1, ST7735_WIDTH-1, y, color);
+  }
+
+  ST7735_FillScreen(ST7735_BLACK);
+  for (int16_t x=0; x < ST7735_WIDTH; x+=6) {
+	  ST7735_DrawLine(ST7735_WIDTH-1, ST7735_HEIGHT-1, x, 0, color);
+  }
+  for (int16_t y=0; y < ST7735_HEIGHT; y+=6) {
+	  ST7735_DrawLine(ST7735_WIDTH-1, ST7735_HEIGHT-1, 0, y, color);
+  }
+}
 /* USER CODE END 0 */
 
 /**
@@ -125,6 +157,9 @@ int main(void)
 		HAL_Delay(1000);
 		  // Check border
 		    ST7735_FillScreen(ST7735_BLACK);
+		    // line draw test
+		    testlines(ST7735_YELLOW);
+		    HAL_Delay(500);
 
 		    for(int x = 0; x < ST7735_WIDTH; x++) {
 		        ST7735_DrawPixel(x, 0, ST7735_RED);
