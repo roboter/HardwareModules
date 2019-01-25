@@ -134,7 +134,7 @@ int main(void)
 	  char string[12] = "Flyability\r\n";
 
 	  printf("Just a print\r\n");
-	  CDC_Transmit_FS(string,12);
+	  CDC_Transmit_FS(string, 12); // this will transmit to virual com port
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
