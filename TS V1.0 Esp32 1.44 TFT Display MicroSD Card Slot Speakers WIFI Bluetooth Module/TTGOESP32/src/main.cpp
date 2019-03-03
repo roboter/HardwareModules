@@ -31,13 +31,6 @@ as well as Adafruit raw 1.8" TFT display
                       // in which case, set this #define pin to -1!
 #define TFT_DC 17
 
-// Option 1 (recommended): must use the hardware SPI pins
-// (for UNO thats sclk = 13 and sid = 11) and pin 10 must be
-// an output. This is much faster - also required if you want
-// to use the microSD card (see the image drawing example)
-//Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS,  TFT_DC, TFT_RST);
-
-// Option 2: use any pins but a little slower!
 #define TFT_SCLK 5   // set these to be whatever pins you like!
 #define TFT_MOSI 23   // set these to be whatever pins you like!
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_MOSI, TFT_SCLK, TFT_RST);
