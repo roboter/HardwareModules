@@ -16,18 +16,16 @@
 //number of buttons
 #define NUM_BTN 3
 //buttons ID
-// #define BTN_A 0
-// #define BTN_B 1
-// #define BTN_C 2
+#define BTN_A 0
+#define BTN_B 1
+#define BTN_C 2
 #define BUTTON_A 0
 #define BUTTON_B 1
 #define BUTTON_C 2
-// #define BUTTON_A_PIN 39
-// #define BUTTON_B_PIN 38
-// #define BUTTON_C_PIN 37
-#define BUTTON_A_PIN 39
-#define BUTTON_B_PIN 35
-#define BUTTON_C_PIN 34
+#define BUTTON_A_PIN 35//39
+#define BUTTON_B_PIN 34//35
+#define BUTTON_C_PIN 39//34
+
 // BEEP PIN
 #define SPEAKER_PIN 25
 #define TONE_PIN_CHANNEL 0

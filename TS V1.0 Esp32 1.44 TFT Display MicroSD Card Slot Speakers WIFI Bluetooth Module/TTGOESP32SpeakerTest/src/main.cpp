@@ -31,6 +31,7 @@
 
 void setup() {
 
+  Serial.begin(115200);
   // Initialize the M5Stack object
   M5.begin();
 
@@ -43,18 +44,21 @@ void loop() {
   if(M5.BtnA.wasPressed()) {
     M5.Lcd.printf("wasPressed A \r\n");
     M5.Speaker.beep();
+    Serial.println("A");
   }
 
   if(M5.BtnB.wasPressed())
   {
     M5.Lcd.printf("wasPressed B \r\n");
     M5.Speaker.tone(3000, 200); //frequency 3000, durtion 200ms
+    Serial.println("B");
   }
 
   if(M5.BtnC.wasPressed())
   {
     M5.Lcd.printf("wasPressed C \r\n");
     M5.Speaker.playMusic(m5stack_startup_music, 25000);
+    Serial.println("C");
   }
 
   M5.update();
