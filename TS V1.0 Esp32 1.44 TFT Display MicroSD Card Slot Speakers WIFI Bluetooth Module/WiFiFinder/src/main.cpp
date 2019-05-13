@@ -10,6 +10,17 @@
 #include <Adafruit_ST7735.h> // Hardware-specific library
 #include <SPI.h>
 
+#include <menu.h>
+#include <menuIO/serialOut.h>
+#include <menuIO/chainStream.h>
+#include <menuIO/serialIn.h>
+//#include <menuIO/liquidCrystalOut.h>
+#include <menuIO/adafruitGfxOut.h>
+#include <menuIO/keyIn.h>
+
+
+using namespace Menu;
+
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS_PIN, TFT_DC_PIN, TFT_MOSI_PIN, TFT_CLK_PIN, TFT_RST_PIN);
 
 SPEAKER sp = SPEAKER();
@@ -32,6 +43,42 @@ struct Wifi
 };
 
 std::list<Wifi> listofWiFis = {};
+
+int timeOn=10;
+int timeOff=90;
+
+MENU(mainMenu, "Blink menu", Menu::doNothing, Menu::noEvent, Menu::wrapStyle
+  ,FIELD(timeOn,"On","ms",0,100,10,1, Menu::doNothing, Menu::noEvent, Menu::noStyle)
+  ,FIELD(timeOff,"Off","ms",0,100,10,1,Menu::doNothing, Menu::noEvent, Menu::noStyle)
+  ,EXIT("<Back")
+);
+
+serialIn serial(Serial);
+MENU_INPUTS(in, &serial);
+
+#define MAX_DEPTH 1
+#define textScale 1
+const colorDef<uint16_t> colors[] MEMMODE={
+  {{(uint16_t)ST7735_BLACK,(uint16_t)ST7735_BLACK}, {(uint16_t)ST7735_BLACK, (uint16_t)ST7735_BLUE,  (uint16_t)ST7735_BLUE}},//bgColor
+  {{(uint16_t)ST7735_GRAY, (uint16_t)ST7735_GRAY},  {(uint16_t)ST7735_WHITE, (uint16_t)ST7735_WHITE, (uint16_t)ST7735_WHITE}},//fgColor
+  {{(uint16_t)ST7735_WHITE,(uint16_t)ST7735_BLACK}, {(uint16_t)ST7735_YELLOW,(uint16_t)ST7735_YELLOW,(uint16_t)ST7735_RED}},//valColor
+  {{(uint16_t)ST7735_WHITE,(uint16_t)ST7735_BLACK}, {(uint16_t)ST7735_WHITE, (uint16_t)ST7735_YELLOW,(uint16_t)ST7735_YELLOW}},//unitColor
+  {{(uint16_t)ST7735_WHITE,(uint16_t)ST7735_GRAY},  {(uint16_t)ST7735_BLACK, (uint16_t)ST7735_BLUE,  (uint16_t)ST7735_WHITE}},//cursorColor
+  {{(uint16_t)ST7735_WHITE,(uint16_t)ST7735_YELLOW},{(uint16_t)ST7735_BLUE,  (uint16_t)ST7735_RED,   (uint16_t)ST7735_RED}},//titleColor
+};
+
+MENU_OUTPUTS(out, MAX_DEPTH
+  ,ADAGFX_OUT(tft, colors, 6*textScale, 9*textScale, {0,0,14,8}, {14,0,14,8})
+  ,SERIAL_OUT(Serial)
+);
+
+// MENU_OUTPUTS(out, MAX_DEPTH
+//   ,SERIAL_OUT(Serial)
+//   ,NONE//must have 2 items at least
+// );
+
+NAVROOT(nav, mainMenu, MAX_DEPTH, in, out);
+
 
 void AddUniqueWifi(Wifi wifi);
 
