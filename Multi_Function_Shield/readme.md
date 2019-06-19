@@ -13,6 +13,9 @@
 * Infrared receiver interface
 * Serial interface header for connection to serial modules
 
+# Library
+[https://github.com/DireCat/MFShield]()
+
 # Links
 [https://thecustomizewindows.com/2018/07/arduino-multi-functional-shield-for-quick-prototyping/]()
 [https://www.electroschematics.com/14128/getting-started-with-the-arduino-multifunction-shield/]()
