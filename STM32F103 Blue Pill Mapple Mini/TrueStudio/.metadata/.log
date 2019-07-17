@@ -620,3 +620,68 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !MESSAGE Error in initializing ST-Link device.
 Reason: (17) Could not find an ST-Link with serial number 48FF6F066578555546401867.
 Please verify the serial number in the debug configuration.
+!SESSION 2019-05-13 19:46:52.546 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2019-05-13 19:46:59.372
+!MESSAGE Loading product manager
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2019-05-13 19:46:59.397
+!MESSAGE OS info: Windows 10, 10.0, x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2019-05-13 19:46:59.896
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY TrueSTUDIO 1 0 2019-05-13 19:47:02.901
+!MESSAGE Target: STM32, Version: 9.2.0, Build date: 20181203-0921, Installation dir: /D:/TrueSTUDIO for STM32 9.2.0/ide/
+
+!ENTRY TrueSTUDIO 1 0 2019-05-13 19:47:02.902
+!MESSAGE Workspace: C:\Users\robby\Documents\GitHub\HardwareModules\STM32F103 Blue Pill Mapple Mini\TrueStudio
+
+!ENTRY org.eclipse.jface 2 0 2019-05-13 19:47:08.672
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2019-05-13 19:47:08.672
+!MESSAGE A conflict occurred for ALT+CTRL+T:
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.team.svn.ui.command.EditPropertiesCommand,Show Properties,
+		,
+		Category(org.eclipse.team.svn.ui.command.category,SVN,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@95b0ab,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+T,
+	ParameterizedCommand(Command(org.eclipse.tm.terminal.connector.local.command.launch,Open Local Terminal on Selection,
+		,
+		Category(org.eclipse.tm.terminal.view.ui.commands.category,Terminal Commands,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@76bed9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.atollic.truestudio.integration.processorexpert 0 0 2019-05-13 19:47:28.101
+!MESSAGE Atollic TrueSTUDIO Processor Expert integration is up.
+
+!ENTRY org.eclipse.egit.ui 2 0 2019-05-13 19:47:28.390
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\robby'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY edu.hawaii.ics.csdl.jupiter 1 0 2019-05-13 19:47:28.404
+!MESSAGE Code Review is up.
+
+!ENTRY TrueSTUDIO 4 0 2019-05-13 19:48:59.234
+!MESSAGE ST-LINK GDB server failed to start (exit code = -2147155971)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2019-05-13 19:48:59.367
+!MESSAGE Error in initializing ST-Link device.
+Reason: (-2147155971) Unknown. Please check power and cabling to target.
+
+!ENTRY com.atollic.truestudio.productmanager 1 0 2019-05-13 19:50:37.299
+!MESSAGE Unloading product manager
