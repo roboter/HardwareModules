@@ -23,7 +23,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-//#include <stdio.h>
+#include <stdio.h>
+#include "testimg.h"
+#include "fonts.h"
+#include "st7735.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -58,7 +61,39 @@ static void MX_SPI1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void testlines(uint16_t color) {
+	ST7735_FillScreen(ST7735_BLACK);
+  for (int16_t x=0; x < ST7735_WIDTH; x+=6) {
+	  ST7735_DrawLine(0, 0, x, ST7735_HEIGHT-1, color);
+  }
+  for (int16_t y=0; y < ST7735_HEIGHT; y+=6) {
+	  ST7735_DrawLine(0, 0, ST7735_WIDTH-1, y, color);
+  }
 
+  ST7735_FillScreen(ST7735_BLACK);
+  for (int16_t x=0; x < ST7735_WIDTH; x+=6) {
+	  ST7735_DrawLine(ST7735_WIDTH-1, 0, x, ST7735_HEIGHT-1, color);
+  }
+  for (int16_t y=0; y < ST7735_HEIGHT; y+=6) {
+	  ST7735_DrawLine(ST7735_WIDTH-1, 0, 0, y, color);
+  }
+
+  ST7735_FillScreen(ST7735_BLACK);
+  for (int16_t x=0; x < ST7735_WIDTH; x+=6) {
+	  ST7735_DrawLine(0, ST7735_HEIGHT-1, x, 0, color);
+  }
+  for (int16_t y=0; y < ST7735_HEIGHT; y+=6) {
+	  ST7735_DrawLine(0, ST7735_HEIGHT-1, ST7735_WIDTH-1, y, color);
+  }
+
+  ST7735_FillScreen(ST7735_BLACK);
+  for (int16_t x=0; x < ST7735_WIDTH; x+=6) {
+	  ST7735_DrawLine(ST7735_WIDTH-1, ST7735_HEIGHT-1, x, 0, color);
+  }
+  for (int16_t y=0; y < ST7735_HEIGHT; y+=6) {
+	  ST7735_DrawLine(ST7735_WIDTH-1, ST7735_HEIGHT-1, 0, y, color);
+  }
+}
 /* USER CODE END 0 */
 
 /**
@@ -92,7 +127,7 @@ int main(void)
   MX_GPIO_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-
+  ST7735_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -102,6 +137,80 @@ int main(void)
 
 	HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
 	HAL_Delay(1000);
+	  // Check border
+	    ST7735_FillScreen(ST7735_BLACK);
+	    // line draw test
+	    testlines(ST7735_YELLOW);
+	    HAL_Delay(500);
+
+	    for(int x = 0; x < ST7735_WIDTH; x++) {
+	        ST7735_DrawPixel(x, 0, ST7735_RED);
+	        ST7735_DrawPixel(x, ST7735_HEIGHT-1, ST7735_RED);
+	    }
+
+	    for(int y = 0; y < ST7735_HEIGHT; y++) {
+	        ST7735_DrawPixel(0, y, ST7735_RED);
+	        ST7735_DrawPixel(ST7735_WIDTH-1, y, ST7735_RED);
+	    }
+
+	    HAL_Delay(3000);
+
+	    // Check fonts
+	    ST7735_FillScreen(ST7735_BLACK);
+	    ST7735_WriteString(0, 0, "Font_7x10, red on black, lorem ipsum dolor sit amet", Font_7x10, ST7735_RED, ST7735_BLACK);
+	    ST7735_WriteString(0, 3*10, "Font_11x18, green, lorem ipsum", Font_11x18, ST7735_GREEN, ST7735_BLACK);
+	    ST7735_WriteString(0, 3*10+3*18, "Font_16x26", Font_16x26, ST7735_BLUE, ST7735_BLACK);
+	    HAL_Delay(2000);
+
+	    // Check colors
+	    ST7735_FillScreen(ST7735_BLACK);
+	    ST7735_WriteString(0, 0, "BLACK", Font_11x18, ST7735_WHITE, ST7735_BLACK);
+	    HAL_Delay(500);
+
+	    ST7735_FillScreen(ST7735_BLUE);
+	    ST7735_WriteString(0, 0, "BLUE", Font_11x18, ST7735_BLACK, ST7735_BLUE);
+	    HAL_Delay(500);
+
+	    ST7735_FillScreen(ST7735_RED);
+	    ST7735_WriteString(0, 0, "RED", Font_11x18, ST7735_BLACK, ST7735_RED);
+	    HAL_Delay(500);
+
+	    ST7735_FillScreen(ST7735_GREEN);
+	    ST7735_WriteString(0, 0, "GREEN", Font_11x18, ST7735_BLACK, ST7735_GREEN);
+	    HAL_Delay(500);
+
+	    ST7735_FillScreen(ST7735_CYAN);
+	    ST7735_WriteString(0, 0, "CYAN", Font_11x18, ST7735_BLACK, ST7735_CYAN);
+	    HAL_Delay(500);
+
+	    ST7735_FillScreen(ST7735_MAGENTA);
+	    ST7735_WriteString(0, 0, "MAGENTA", Font_11x18, ST7735_BLACK, ST7735_MAGENTA);
+	    HAL_Delay(500);
+
+	    ST7735_FillScreen(ST7735_YELLOW);
+	    ST7735_WriteString(0, 0, "YELLOW", Font_11x18, ST7735_BLACK, ST7735_YELLOW);
+	    HAL_Delay(500);
+
+	    ST7735_FillScreen(ST7735_WHITE);
+	    ST7735_WriteString(0, 0, "WHITE", Font_11x18, ST7735_BLACK, ST7735_WHITE);
+	    HAL_Delay(500);
+
+//	#ifdef ST7735_IS_128X128
+	    // Display test image 128x128
+	    ST7735_DrawImage(0, 0, ST7735_WIDTH, ST7735_HEIGHT, (uint16_t*)test_img_128x128);
+
+	/*
+	    // Display test image 128x128 pixel by pixel
+	    for(int x = 0; x < ST7735_WIDTH; x++) {
+	        for(int y = 0; y < ST7735_HEIGHT; y++) {
+	            uint16_t color565 = test_img_128x128[y][x];
+	            // fix endiness
+	            color565 = ((color565 & 0xFF00) >> 8) | ((color565 & 0xFF) << 8);
+	            ST7735_DrawPixel(x, y, color565);
+	        }
+	    }
+	*/
+	    HAL_Delay(15000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
