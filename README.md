@@ -2,7 +2,7 @@
 List of all my arduinos, ESPs, STM32s modules
 
 # Displays
-* 1,7 SPI 128x160 OLED ST7735 <br/>[![1,7 SPI 128x160 OLED ST7735](Displays/1,7 SPI 128x160 OLED ST7735/1.8TFT-Display-V1.0-Pin-Out.png)](/Displays/1,7 SPI 128x160 OLED ST7735)
+* 1,7 SPI 128x160 OLED ST7735 <br/>[![1,7 SPI 128x160 OLED ST7735](Displays/1,7_SPI_128x160_OLED_ST7735/1.8TFT-Display-V1.0-Pin-Out.png)](/Displays/1,7_SPI_128x160_OLED_ST7735)
 
 # ESP
 * Heltec WiFi Kit 8 <br/>[![Heltec WiFi Kit 8](HELTEC/heltec_front.jpg)](/HELTEC)
