@@ -1,8 +1,17 @@
 # HardwareModules
-List of all my arduino, ESP, STM32 modules
+List of all my arduinos, ESPs, STM32s modules
 
-* Multi function Shield
+# Displays
+* 1,7 SPI 128x160 OLED ST7735 <br/>[![1,7 SPI 128x160 OLED ST7735](Displays/1,7 SPI 128x160 OLED ST7735/1.8TFT-Display-V1.0-Pin-Out.png)](/Displays/1,7 SPI 128x160 OLED ST7735)
 
+# ESP
+* [TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module ![TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module](TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module/s-l1600.jpg)](/TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module)
 
+# STM32
 
-[![Multi Function Shield](Multi_Function_Shield/shield.jpg)](/Multi_Function_Shield)
+# Arduino
+
+* Digistump ATTINY85 <br/>[![Digistump ATTINY85](Digistump ATTINY85/attiny.jpg)](/Digistump ATTINY85)
+
+# Shields (arduino)
+* Multi function Shield <br/>[![Multi Function Shield](Multi_Function_Shield/shield.jpg)](/Multi_Function_Shield)
