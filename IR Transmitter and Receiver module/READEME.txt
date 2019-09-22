@@ -1,0 +1,7 @@
+YS-IRTM
+
+Default set to 9600
+
+I set to 19200
+
+https://forum.arduino.cc/index.php?topic=359707.0
