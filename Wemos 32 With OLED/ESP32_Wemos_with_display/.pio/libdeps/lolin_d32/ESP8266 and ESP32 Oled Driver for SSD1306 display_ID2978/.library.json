@@ -1,0 +1,46 @@
+{
+    "name": "ESP8266 and ESP32 Oled Driver for SSD1306 display", 
+    "version": "4.0.0", 
+    "keywords": [
+        "display"
+    ], 
+    "description": "A I2C/SPI display driver for SSD1306 OLED displays connected to ESP8266 or ESP32", 
+    "frameworks": [
+        "arduino"
+    ], 
+    "platforms": [
+        "espressif8266", 
+        "espressif32"
+    ], 
+    "authors": [
+        {
+            "email": "info@thingpulse.com", 
+            "url": null, 
+            "maintainer": true, 
+            "name": "ThingPulse"
+        }, 
+        {
+            "email": null, 
+            "url": null, 
+            "maintainer": false, 
+            "name": "Fabrice Weinberg"
+        }
+    ], 
+    "repository": {
+        "type": "git", 
+        "url": "https://github.com/ThingPulse/esp8266-oled-ssd1306"
+    }, 
+    "homepage": null, 
+    "export": {
+        "include": null, 
+        "exclude": [
+            "extras", 
+            "docs", 
+            "tests", 
+            "test", 
+            "*.doxyfile", 
+            "*.pdf"
+        ]
+    }, 
+    "id": 2978
+}
