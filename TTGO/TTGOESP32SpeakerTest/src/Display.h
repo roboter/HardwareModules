@@ -29,9 +29,9 @@
 #define TFT_WIDTH 320
 #define TFT_HEIGHT 240
 
-#define TFT_CS 14  // Chip select control pin
-#define TFT_DC 27  // Data Command control pin
-#define TFT_RST 33 // Reset pin (could connect to Arduino RESET pin)
+#define TFT_CS 16  // Chip select control pin
+#define TFT_DC 17  // Data Command control pin
+#define TFT_RST 9 // Reset pin (could connect to Arduino RESET pin)
 
 #define LOAD_GLCD  // Font 1. Original Adafruit 8 pixel font needs ~1820 bytes in FLASH
 #define LOAD_FONT2 // Font 2. Small 16 pixel high font, needs ~3534 bytes in FLASH, 96 characters
@@ -56,8 +56,8 @@
 // run slightly faster, so leave it commented out unless you need it!
 // Transaction support is needed to work with SD library but not needed with TFT_SdFat
 
-#define SPI_HAS_TRANSACTION 
-#define SUPPORT_TRANSACTIONS 
+#define SPI_HAS_TRANSACTION
+#define SUPPORT_TRANSACTIONS
 
 // Color definitions for backwards compatibility with old sketches
 // use colour definitions like TFT_BLACK to make sketches more portable
@@ -336,7 +336,7 @@
 #include <Fonts/GFXFF/FreeSerifBoldItalic12pt7b.h> // FF46 or FSBI12
 #include <Fonts/GFXFF/FreeSerifBoldItalic18pt7b.h> // FF47 or FSBI18
 #include <Fonts/GFXFF/FreeSerifBoldItalic24pt7b.h> // FF48 or FSBI24
-  
+
 #endif // #ifdef LOAD_GFXFF
 
 
@@ -536,7 +536,7 @@ public:
   uint16_t readcommand16(uint8_t cmd_function, uint8_t index);
   uint32_t readcommand32(uint8_t cmd_function, uint8_t index);
 
-           // Read the colour of a pixel at x,y and return value in 565 format 
+           // Read the colour of a pixel at x,y and return value in 565 format
   uint16_t readPixel(int32_t x0, int32_t y0);
 
            // The next functions can be used as a pair to copy screen blocks (or horizontal/vertical lines) to another location
@@ -561,7 +561,7 @@ public:
            drawNumber(long long_num,int poX, int poY),
            drawFloat(float floatNumber,int decimal,int poX, int poY, int font),
            drawFloat(float floatNumber,int decimal,int poX, int poY),
-           
+
            // Handle char arrays
            drawString(const char *string, int poX, int poY, int font),
            drawString(const char *string, int poX, int poY),
@@ -573,7 +573,7 @@ public:
            drawString(const String& string, int poX, int poY),
            drawCentreString(const String& string, int dX, int poY, int font), // Deprecated, use setTextDatum() and drawString()
            drawRightString(const String& string, int dX, int poY, int font);  // Deprecated, use setTextDatum() and drawString()
-           
+
   int16_t  height(void),
            width(void),
            textWidth(const char *string, int font),
@@ -657,7 +657,7 @@ public:
 	inline void setTransparentBgColor(bool isTransparent) { istransparent = isTransparent; }
 	// Get whether is transparent background
 	inline bool isTransparentBg(){return istransparent;}
-	
+
 private:
 	uint8_t
 		hzkBufCount,
@@ -671,14 +671,14 @@ private:
 	File
 		Asc16File, Hzk16File,		// Font file
 		*pAsc16File, *pHzk16File;	// Font file pointer
-	uint8_t *pAscCharMatrix, *pGbkCharMatrix;	
+	uint8_t *pAscCharMatrix, *pGbkCharMatrix;
 	uint16_t
-		highlightcolor, 
-		ascCharWidth, 
-		ascCharHeigth, 
-		gbkCharWidth, 
+		highlightcolor,
+		ascCharWidth,
+		ascCharHeigth,
+		gbkCharWidth,
 		gbkCharHeight;
-	
+
 	bool initHzk16(boolean use, const char* HZK16Path = nullptr, const char* ASC16Path = nullptr);
 	// Write HZK Ascii codes
 	void writeHzkAsc(const char c);

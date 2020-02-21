@@ -16,3 +16,12 @@ JUST RESET While holding boot0 is sufficent to program
 # 
 LED_BUILTIN - Blue LED on ESP-01 module
 13 - LED is on Arduino module
+
+http://www.esp8266learning.com/tm1637-7-segment-display-example.php
+
+
+#include <TM1637Display.h>
+
+// Module connection pins (Digital Pins)
+const int CLK = D6; //Set the CLK pin connection to the display
+const int DIO = D5; //Set the DIO pin connection to the display
