@@ -67,12 +67,9 @@ uint32_t receive_data(void) {
 	 * there will be a pulse of 9ms LOW and
 	 * than 4.5 ms space (HIGH)
 	 */
-	while (HAL_GPIO_ReadPin(IR_GPIO_Port, IR_Pin))
-		;   // wait for the pin to go low
+	  while (!(HAL_GPIO_ReadPin (IR_GPIO_Port, IR_Pin)));  // wait for the pin to go high.. 9ms LOW
 
-	while ((HAL_GPIO_ReadPin(IR_GPIO_Port, IR_Pin)))
-		;  // wait for the pin to go low.. 4.5ms HIGH
-
+	  while ((HAL_GPIO_ReadPin (IR_GPIO_Port, IR_Pin)));  // wait for the pin to go low.. 4.5ms HIGH
 	/* START of FRAME ends here*/
 
 	/* DATA Reception
@@ -142,15 +139,15 @@ int main(void) {
 	/* USER CODE BEGIN WHILE */
 
 	while (1) {
-
+		while (HAL_GPIO_ReadPin (IR_GPIO_Port, IR_Pin));   // wait for the pin to go low
 		uint32_t data = receive_data();
 		uint8_t buffer[10] = "";
 		sprintf(buffer, "%02X\n", data);
 		CDC_Transmit_FS(buffer, sizeof(buffer));
 		HAL_Delay(100);
-		if (data == 2155847010) {
+		if (data == 0xFF3AC5) {
 			HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET); // ON
-		} else if (data == 2155863330) {
+		} else if (data == 0xFFBA45) {
 			HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET); // OFF
 
 		}
