@@ -15,12 +15,21 @@ Needs Library
 https://github.com/ThingPulse/esp8266-oled-ssd1306
 and TimeLib
 
+# battery level 
+float batteryLevel = map(analogRead(33), 0.0f, 4095.0f, 0, 100);
+
+chip TP5410
+
+# ARDUNIO 
+* Board: ESP32 Dev Module
+
 # HARDWARE
-LED = 16 <br/>
+LED =  GPIO16[D0]
 bootButton = 0
 
 # scematic
 https://www.espressif.com/en/products/hardware/esp32-devkitc/resources
+
 # OLED
 Unlike on other ESP32 boards with OLEDs, the OLED's I2C SDA and SCL pins are connected as follows:
 

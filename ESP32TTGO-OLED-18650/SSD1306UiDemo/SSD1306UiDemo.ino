@@ -70,7 +70,6 @@
 
 // Initialize the OLED display using Wire library
 SSD1306Wire  display(0x3c, 5, 4);
-// SH1106Wire display(0x3c, D3, D5);
 
 OLEDDisplayUi ui     ( &display );
 
