@@ -6,8 +6,8 @@ List of all my arduinos, ESPs, STM32s modules
 * 4 Bits TM1637 Digital Tube LED Clock Display Module For Arduino Due UNO 2560 R3
 
 ### UTFT for arduino mege (Paltformio)
-![fron](displays/utft/images/front.jpg)
-![back](displays/utft/images/back.jpg)
+![front](/Displays/UTFT/images/front.jpg)
+![back](/Displays/UTFT/images/back.jpg)
 
 
 # ESP
