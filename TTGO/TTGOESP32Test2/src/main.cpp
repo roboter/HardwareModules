@@ -1,10 +1,20 @@
 #include <Arduino.h>
-
+#include <Wire.h>
 // ESP32 + 1.44" TFT v2.1                                  // 2017.02.08 macsbug
 // http://www.sipatechmeetup.com/media/uploads/arduinoesp32dev.pdf
 #include <Adafruit_GFX.h>                                  // Core graphics library
 #include <Adafruit_ST7735.h>                               // Hardware-specific library
-Adafruit_ST7735 tft = Adafruit_ST7735(16, 17, 23, 5, 9); // CS,A0,SDA,SCK,RESET
+// For the breakout, you can use any 2 or 3 pins
+// These pins will also work for the 1.8" TFT shield
+#define TFT_CS 16
+#define TFT_RST 9  // you can also connect this to the Arduino reset
+                      // in which case, set this #define pin to -1!
+#define TFT_DC 17
+
+#define TFT_SCLK 5   // set these to be whatever pins you like!
+#define TFT_MOSI 23   // set these to be whatever pins you like!//sds
+Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_MOSI, TFT_SCLK, TFT_RST);
+
 float r, x1, ya, z1, x2, y2, z2, x3, y3, z3;               //
 int f[8][2], x, y;                                         // Draw box, x, y center
 int c[8][3] = {                                            // Cube
