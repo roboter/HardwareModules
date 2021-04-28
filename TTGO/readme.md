@@ -11,11 +11,11 @@ https://www.youtube.com/watch?v=s12XuR7BJkw
 v1.0 don't have it
 
 
-Button Demo - Worsk
+Button Demo - Works
 TTGOESP32 - Works
-test2 - Works
+test2 - Works DISPLAY + Music
 
-
+```
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7735.h> // Hardware-specific library
 #include <SPI.h>
@@ -43,7 +43,7 @@ Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS, TFT_DC, TFT_MOSI, TFT_SCLK, TFT_RS
 
 
 #define LED_BUILTIN 22
-
+```
 
 Audio = io25 NS4148
 
