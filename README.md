@@ -17,9 +17,7 @@ List of all my arduinos, ESPs, STM32s modules
 
 # TTGO with dispaly 
 
-* TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module 
-* [![TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module](TTGO/s-l1600.jpg)]
-* (/TTGO)
+* TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module [![TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module](TTGO/s-l1600.jpg)](/TTGO)
 
 
 # STM32
