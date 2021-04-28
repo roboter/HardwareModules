@@ -15,7 +15,11 @@ List of all my arduinos, ESPs, STM32s modules
 * ESP32TTGO-OLED-18650 <br/>[![ESP32TTGO-OLED-18650](ESP32TTGO-OLED-18650/TTGO_ESP32_LiOn.jpg)](/ESP32TTGO-OLED-18650)
 
 
-* [TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module ![TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module](TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module/s-l1600.jpg)](/TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module)
+# TTGO with dispaly 
+
+* TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module 
+* [![TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module](TTGO/s-l1600.jpg)]
+* (/TTGO)
 
 
 # STM32
