@@ -1,0 +1,1 @@
+C:\Users\Itaru\.platformio\penv\Scripts\pio.exe run -v
