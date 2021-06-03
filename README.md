@@ -19,13 +19,9 @@ List of all my arduinos, ESPs, STM32s modules
 <img alt="ESP32TTGO-OLED-18650" src="ESP32TTGO-OLED-18650/TTGO_ESP32_LiOn.jpg" width="128" height="128"></a>
 
 
-* <a href="/TTGO">TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module <br/>
-<img alt="TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module" src="TTGO/s-l1600.jpg" width="128" height="128">
-</a>
+* <a href="/TTGO">TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module <br/><img alt="TS V1.0 Esp32 1.44 TFT Display MicroSD Card Slot Speakers WIFI Bluetooth Module" src="TTGO/s-l1600.jpg" width="128" height="128"></a>
 
-* <a href="/TTGO">Wemos with Display<br/>
-<img alt="Wemos with Display" src="Wemos-32-With-OLED/Wemos%2032%20(2).jpg" width="128" height="128">
-</a>
+* <a href="/TTGO">Wemos with Display<br/><img alt="Wemos with Display" src="Wemos-32-With-OLED/Wemos%2032%20(2).jpg" width="128" height="128"></a>
 
 # STM32
 * BluePill<br/> [![BluePill](STM32/BluePill/800px-STM32_Blue_Pill_perspective.jpg)](/BluePill)
