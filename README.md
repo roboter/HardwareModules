@@ -2,12 +2,13 @@
 List of all my arduinos, ESPs, STM32s modules
 
 # Displays
-* 1,7 SPI 128x160 OLED ST7735 <br/>[![1,7 SPI 128x160 OLED ST7735](Displays/1,7_SPI_128x160_OLED_ST7735/1.8TFT-Display-V1.0-Pin-Out.png)](/Displays/1,7_SPI_128x160_OLED_ST7735)
+* 1,7 SPI 128x160 OLED ST7735 <br/>
+[![1,7 SPI 128x160 OLED ST7735|64x64](Displays/1,7_SPI_128x160_OLED_ST7735/1.8TFT-Display-V1.0-Pin-Out.png)](Displays/1,7_SPI_128x160_OLED_ST7735)
 * 4 Bits TM1637 Digital Tube LED Clock Display Module For Arduino Due UNO 2560 R3
 
-### UTFT for arduino mege (Paltformio)
-![front](/Displays/UTFT/images/front.jpg)
-![back](/Displays/UTFT/images/back.jpg)
+* UTFT for arduino mege (Paltformio)
+![front|64x64](Displays/UTFT/images/front.jpg)
+![back|64x64](Displays/UTFT/images/back.jpg)
 
 
 # ESP
