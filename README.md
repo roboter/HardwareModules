@@ -24,21 +24,19 @@ List of all my arduinos, ESPs, STM32s modules
 * <a href="/TTGO">Wemos with Display<br/><img alt="Wemos with Display" src="Wemos-32-With-OLED/Wemos%2032%20(2).jpg" width="128" height="128"></a>
 
 # STM32
-* BluePill<br/> [![BluePill](STM32/BluePill/800px-STM32_Blue_Pill_perspective.jpg)](/BluePill)
+* <a href="/STM32/BluePill">BluePill<br/><img alt="BluePill" src="STM32/BluePill/800px-STM32_Blue_Pill_perspective.jpg" width="128" height="128"></a>
 
-* [STM32F103C8T6 ARM Minisystem Development Board STM32 Development Core Board<br/>
-![STM32F103C8T6 ARM Minisystem Development Board STM32 Development Core Board](STM32/STM32F103C8T6_ARM_Development_Board/front.jpg)](/STM32/STM32F103C8T6_ARM_Development_Board)
+* <a href="/STM32/STM32F103C8T6_ARM_Development_Board">STM32F103C8T6 ARM Minisystem Development Board STM32 Development Core Board<br/><img alt="STM32F103C8T6 ARM Minisystem Development Board STM32 Development Core Board" src="STM32/STM32F103C8T6_ARM_Development_Board/front.jpg" width="128" height="128"></a>
 
 # Arduino
-
-* Digistump ATTINY85 <br/>[![Digistump ATTINY85](Digistump ATTINY85/attiny.jpg)](/Digistump ATTINY85)
+* <a href="/Arduino/Digistump-ATTINY85">Digistump ATTINY85<br/><img alt="Digistump ATTINY85" src="Arduino/Digistump ATTINY85/attiny.jpg" width="128" height="128"></a>
 
 # Shields (arduino)
-* Multi function Shield <br/>[![Multi Function Shield](Multi_Function_Shield/shield.jpg)](/Multi_Function_Shield)
-* SIM808 GPS GSM GPRS Bluetooth Module W/2.4G Antenna Replace SIM908 For Arduino
+* <a href="/Multi_Function_Shield">Multi function Shield<br/><img alt="Multi function Shield" src="Multi_Function_Shield/shield.jpg" width="128" height="128"></a>
+
 
 # Battery Charger
-* 3.7V 3.8V 7.4V 11.1V 12V 14.8V 18.5V Lithium li-on Lipo 18650 Battery Charger<br/> ![DD28CRTA](/Battery_Charger/DD28CRTA/s-l1600.jpg)
+* <a href="/Battery_Charger/DD28CRTA">3.7V 3.8V 7.4V 11.1V 12V 14.8V 18.5V Lithium li-on Lipo 18650 Battery Charger<br/><img alt="DD28CRTA" src="Battery_Charger/DD28CRTA/s-l1600.jpg" width="128" height="128"></a>
 
 # Modules
-* CP2102 Micro USB to UART TTL Module 6Pin Serial Converter STC Replace FT232
+* <a href="/CP2102USB2UART">CP2102 Micro USB to UART TTL Module 6Pin Serial Converter STC Replace FT232<br/><img alt="CP2102" src="CP2102USB2UART/CP2102.jpg" width="128" height="128"></a>
